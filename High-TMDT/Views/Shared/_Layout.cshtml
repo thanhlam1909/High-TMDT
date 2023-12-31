@@ -205,16 +205,18 @@
                                     @if (User.Identity.IsAuthenticated)
                                     {
                                         <a href="@Url.Action("Profile", "Home")">Tài Khoản</a>
-                                        <a href="@Url.Action("Hitory-cart", "Home")">Đơn mua</a>
+                                        <a href="@Url.Action("History-cart", "Home")">Đơn mua</a>
                                         <!-- If authenticated, show a link to log out -->
-                                        <a href="@Url.Action("Logout", "Home")">Đăng Xuất</a>
+                                        <a method="get" asp-controller="Login" asp-action="Logout">Đăng Xuất</a>
                                     }
                                     else
                                     {
                                         <!-- If not authenticated, show links to login and register -->
-                                        <a href="@Url.Action("Login", "Home")">Đăng Nhập Và Đăng Kí</a>
+                                        <a href="@Url.Action("Index", "Login")">Đăng Nhập</a>
+                                        <a href="@Url.Action("Index", "Signup")">Đăng Kí</a>
                                     }
                                 </div>
+
                             </div>
                         </div>
                     </div>

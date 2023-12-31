@@ -1,4 +1,4 @@
-using High_TMDT.Data;
+﻿using High_TMDT.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +14,7 @@ builder.Services.AddDbContext<High_TMDTContext>(options =>
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        options.ExpireTimeSpan = TimeSpan.FromSeconds(20);
         options.SlidingExpiration = true;
         options.AccessDeniedPath = "/Forbidden/";
     });
@@ -28,7 +28,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
