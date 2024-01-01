@@ -7,7 +7,6 @@ namespace High_TMDT.Data
     {
         public HangSanPham()
         {
-            DongSanPhams = new HashSet<DongSanPham>();
             HangSanXuatLoaiSanPhams = new HashSet<HangSanXuatLoaiSanPham>();
         }
 
@@ -15,7 +14,6 @@ namespace High_TMDT.Data
         public string TenHangSp { get; set; } = null!;
         public string? AnhHang { get; set; }
 
-        public virtual ICollection<DongSanPham> DongSanPhams { get; set; }
         public virtual ICollection<HangSanXuatLoaiSanPham> HangSanXuatLoaiSanPhams { get; set; }
     }
 }

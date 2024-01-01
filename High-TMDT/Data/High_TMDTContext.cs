@@ -49,6 +49,7 @@ namespace High_TMDT.Data
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserAddress> UserAddresses { get; set; } = null!;
         public virtual DbSet<ViewedProduct> ViewedProducts { get; set; } = null!;
+        public virtual DbSet<WirelesSp> WirelesSps { get; set; } = null!;
         public virtual DbSet<Wireless> Wirelesses { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -312,11 +313,6 @@ namespace High_TMDT.Data
                     .WithMany(p => p.CauHinhSanPhamLaptops)
                     .HasForeignKey(d => d.Tencardtichhop)
                     .HasConstraintName("FK_CardDoHoaTichHop_SanPhamLaptop");
-
-                entity.HasOne(d => d.WirelessNavigation)
-                    .WithMany(p => p.CauHinhSanPhamLaptops)
-                    .HasForeignKey(d => d.Wireless)
-                    .HasConstraintName("FK__CauHinhSa__wirel__73BA3083");
             });
 
             modelBuilder.Entity<CongKetNoi>(entity =>
@@ -428,29 +424,22 @@ namespace High_TMDT.Data
             modelBuilder.Entity<DongSanPham>(entity =>
             {
                 entity.HasKey(e => e.IdDongSanPham)
-                    .HasName("PK__DongSanP__F71BA055E587F762");
+                    .HasName("PK__DongSanP__F71BA055439F6E49");
 
                 entity.ToTable("DongSanPham");
 
                 entity.Property(e => e.IdDongSanPham).HasColumnName("idDongSanPham");
 
-                entity.Property(e => e.IdhangSanPham).HasColumnName("idhangSanPham");
-
-                entity.Property(e => e.LoaiSanPham).HasColumnName("loaiSanPham");
+                entity.Property(e => e.IdhangLoaiSanPham).HasColumnName("idhang_loaiSanPham");
 
                 entity.Property(e => e.TenDongSanPham)
                     .HasMaxLength(255)
                     .HasColumnName("tenDongSanPham");
 
-                entity.HasOne(d => d.IdhangSanPhamNavigation)
+                entity.HasOne(d => d.IdhangLoaiSanPhamNavigation)
                     .WithMany(p => p.DongSanPhams)
-                    .HasForeignKey(d => d.IdhangSanPham)
-                    .HasConstraintName("FK_DongSanPham_HangSanPham");
-
-                entity.HasOne(d => d.LoaiSanPhamNavigation)
-                    .WithMany(p => p.DongSanPhams)
-                    .HasForeignKey(d => d.LoaiSanPham)
-                    .HasConstraintName("FK_DongSanPham_LoaiSanPham");
+                    .HasForeignKey(d => d.IdhangLoaiSanPham)
+                    .HasConstraintName("FK_DongSanPham_HangSanXuatLoaiSanPham");
             });
 
             modelBuilder.Entity<DsspDonHang>(entity =>
@@ -973,6 +962,31 @@ namespace High_TMDT.Data
                     .WithMany(p => p.ViewedProducts)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK__ViewedPro__UserI__19DFD96B");
+            });
+
+            modelBuilder.Entity<WirelesSp>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Wireles_SP");
+
+                entity.Property(e => e.MaChsp).HasColumnName("Ma_CHSP");
+
+                entity.Property(e => e.MaWireless)
+                    .HasMaxLength(255)
+                    .HasColumnName("Ma_Wireless");
+
+                entity.Property(e => e.MaWirelessSp).HasColumnName("Ma_Wireless_SP");
+
+                entity.HasOne(d => d.MaChspNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.MaChsp)
+                    .HasConstraintName("FK_Wireles_SP_CauHinhSanPhamLaptop");
+
+                entity.HasOne(d => d.MaWirelessNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.MaWireless)
+                    .HasConstraintName("FK_Wireles_SP_Wireless");
             });
 
             modelBuilder.Entity<Wireless>(entity =>

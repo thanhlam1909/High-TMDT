@@ -11,12 +11,10 @@ namespace High_TMDT.Data
         }
 
         public int IdDongSanPham { get; set; }
-        public int? IdhangSanPham { get; set; }
+        public int? IdhangLoaiSanPham { get; set; }
         public string? TenDongSanPham { get; set; }
-        public int? LoaiSanPham { get; set; }
 
-        public virtual HangSanPham? IdhangSanPhamNavigation { get; set; }
-        public virtual LoaiSanPham? LoaiSanPhamNavigation { get; set; }
+        public virtual HangSanXuatLoaiSanPham? IdhangLoaiSanPhamNavigation { get; set; }
         public virtual ICollection<SanPhamLaptop> SanPhamLaptops { get; set; }
     }
 }

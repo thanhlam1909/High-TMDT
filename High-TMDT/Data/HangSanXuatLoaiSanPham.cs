@@ -7,6 +7,7 @@ namespace High_TMDT.Data
     {
         public HangSanXuatLoaiSanPham()
         {
+            DongSanPhams = new HashSet<DongSanPham>();
             SanPhamLaptops = new HashSet<SanPhamLaptop>();
         }
 
@@ -16,6 +17,7 @@ namespace High_TMDT.Data
 
         public virtual HangSanPham? IdHangSpNavigation { get; set; }
         public virtual LoaiSanPham? IdLoaiSpNavigation { get; set; }
+        public virtual ICollection<DongSanPham> DongSanPhams { get; set; }
         public virtual ICollection<SanPhamLaptop> SanPhamLaptops { get; set; }
     }
 }

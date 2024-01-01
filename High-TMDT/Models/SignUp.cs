@@ -4,6 +4,7 @@
     {
         public High_TMDT.Data.User User { get; set; }
         public High_TMDT.Data.UserAddress UserAddress { get; set; }
+        public List<UserAndAddressViewModel> UserAndAddressList { get; set; }
 
     }
 }

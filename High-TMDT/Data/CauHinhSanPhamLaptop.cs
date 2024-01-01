@@ -41,7 +41,6 @@ namespace High_TMDT.Data
         public virtual Mau? MauNavigation { get; set; }
         public virtual CardRoi? TencardroiNavigation { get; set; }
         public virtual CardDoHoaTichHop? TencardtichhopNavigation { get; set; }
-        public virtual Wireless? WirelessNavigation { get; set; }
         public virtual ICollection<CongKetNoiCuaSanPham> CongKetNoiCuaSanPhams { get; set; }
     }
 }

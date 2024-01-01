@@ -30,6 +30,5 @@ namespace High_TMDT.Controllers
         {
             return View();
         }
-
     }
 }
