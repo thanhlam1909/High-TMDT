@@ -57,14 +57,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
 
-                    <span style="font-weight:bold">Danh Mục - Loại - Dòng</span>
+                    <span style="font-weight:bold">Hãng - Loại - Dòng</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Danh Mục</a>
-                        <a class="collapse-item" href="cards.html">Loại</a>
-                        <a class="collapse-item" href="buttons.html">Dòng</a>
-
+                        
+                        <a class="collapse-item" href="@Url.Action("Index", "LoaiSP")" >Loại</a>
+                        <a class ="collapse-item" href="@Url.Action("Index", "LoaiSP")">Dòng</a>
+                        <a class="collapse-item" href="@Url.Action("Index", "LoaiSP")">Hãng</a>
                     </div>
                 </div>
             </li>
@@ -80,15 +80,15 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Cấu Hình Sản Phẩm:</h6>
-                        <a class="collapse-item" href="utilities-color.html">CPU-Vi xử lí</a>
-                        <a class="collapse-item" href="utilities-border.html">Card tích hợp</a>
-                        <a class="collapse-item" href="utilities-animation.html">Card rời</a>
-                        <a class="collapse-item" href="utilities-animation.html">Ram</a>
-                        <a class="collapse-item" href="utilities-animation.html">Ổ Cứng</a>
-                        <a class="collapse-item" href="utilities-animation.html">Màu</a>
-                        <a class="collapse-item" href="utilities-animation.html">Màn Hình</a>
-                        <a class="collapse-item" href="utilities-animation.html">WireLess</a>
-                        <a class="collapse-item" href="utilities-animation.html">Cổng Kết Nối</a>
+                        <a href="@Url.Action("Index", "Cpu")"  class="collapse-item" href="utilities-color.html">CPU-Vi xử lí</a>
+                        <a href="@Url.Action("Index", "CardTichHop")" class="collapse-item" href="utilities-border.html">Card tích hợp</a>
+                        <a href="@Url.Action("Index", "Cardroi")" class="collapse-item" href="utilities-animation.html">Card rời</a>
+                        <a href="@Url.Action("Index", "Ram")" class="collapse-item" href="utilities-animation.html">Ram</a>
+                        <a href="@Url.Action("Index", "Ocung")" class="collapse-item" href="utilities-animation.html">Ổ Cứng</a>
+                        <a href="@Url.Action("Index", "Mau")"  class="collapse-item" href="utilities-animation.html">Màu</a>
+                        <a href="@Url.Action("Index", "Manhinh")" class="collapse-item" href="utilities-animation.html">Màn Hình</a>
+                        <a href="@Url.Action("Index", "Wireless")" class="collapse-item" href="utilities-animation.html">WireLess</a>
+                        <a href="@Url.Action("Index", "CongKetNoi")" class="collapse-item" href="utilities-animation.html">Cổng Kết Nối</a>
 
                     </div>
                 </div>

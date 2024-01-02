@@ -17,11 +17,12 @@ namespace High_TMDT.Controllers
         {
             _context = dbContext;
         }
+        [HttpGet("/dang-nhap")]
         public IActionResult Index()
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost("/dang-nhap")]
         public async Task<IActionResult> Login(User user)
         {
             var validUser = _context.Users.SingleOrDefault(u => u.TenDangNhap == user.TenDangNhap);

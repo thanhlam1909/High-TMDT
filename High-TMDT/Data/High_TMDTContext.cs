@@ -206,10 +206,6 @@ namespace High_TMDT.Data
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Bluetooth)
-                    .HasMaxLength(255)
-                    .HasColumnName("bluetooth");
-
                 entity.Property(e => e.Camera)
                     .HasMaxLength(255)
                     .HasColumnName("camera");
@@ -244,10 +240,6 @@ namespace High_TMDT.Data
                     .HasMaxLength(255)
                     .HasColumnName("kieuPin");
 
-                entity.Property(e => e.Lan)
-                    .HasMaxLength(255)
-                    .HasColumnName("lan");
-
                 entity.Property(e => e.Loa)
                     .HasMaxLength(255)
                     .HasColumnName("loa");
@@ -269,10 +261,6 @@ namespace High_TMDT.Data
                 entity.Property(e => e.TrongLuong)
                     .HasMaxLength(255)
                     .HasColumnName("trongLuong");
-
-                entity.Property(e => e.Wireless)
-                    .HasMaxLength(255)
-                    .HasColumnName("wireless");
 
                 entity.HasOne(d => d.IdBoViXuLyNavigation)
                     .WithMany(p => p.CauHinhSanPhamLaptops)
@@ -513,6 +501,8 @@ namespace High_TMDT.Data
                 entity.Property(e => e.LinkVideo)
                     .HasMaxLength(255)
                     .HasColumnName("Link_Video");
+
+                entity.Property(e => e.Noidung).HasMaxLength(255);
 
                 entity.Property(e => e.ThuTuAnh).HasColumnName("Thu_Tu_Anh");
 
@@ -868,6 +858,8 @@ namespace High_TMDT.Data
                 entity.Property(e => e.NgayThemSanPham)
                     .HasColumnType("datetime")
                     .HasColumnName("ngayThemSanPham");
+
+                entity.Property(e => e.Soluong).HasColumnName("soluong");
 
                 entity.Property(e => e.TenSanPham)
                     .HasMaxLength(255)

@@ -24,7 +24,17 @@ namespace High_TMDT.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var viewModel = new IndexViewModel();
+
+            var hangSanPhamList = _context.HangSanPhams.ToList();
+            viewModel.HangSanPhamList = hangSanPhamList;
+
+            // Get the list of LoaiSanPham
+            var loaiSanPhamList = _context.LoaiSanPhams.ToList();
+            viewModel.LoaiSanPhamList = loaiSanPhamList;
+
+
+            return View(viewModel);
         }
         public IActionResult Privacy()
         {

@@ -1,0 +1,88 @@
+﻿@model High_TMDT.Data.CardRoi
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout_Manage.cshtml";
+
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<div class="container mt-3">
+    <h1>Edit</h1>
+
+    <h4>CardRoi</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdCardRoi" />
+                <div class="form-group">
+                    <label asp-for="TenCard" class="control-label"></label>
+                    <input asp-for="TenCard" class="form-control" />
+                    <span asp-validation-for="TenCard" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NhaSx" class="control-label"></label>
+                    <input asp-for="NhaSx" class="form-control" />
+                    <span asp-validation-for="NhaSx" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="KienTruc" class="control-label"></label>
+                    <input asp-for="KienTruc" class="form-control" />
+                    <span asp-validation-for="KienTruc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Vram" class="control-label"></label>
+                    <input asp-for="Vram" class="form-control" />
+                    <span asp-validation-for="Vram" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GiaoThuc" class="control-label"></label>
+                    <input asp-for="GiaoThuc" class="form-control" />
+                    <span asp-validation-for="GiaoThuc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BangThongBoNho" class="control-label"></label>
+                    <input asp-for="BangThongBoNho" class="form-control" />
+                    <span asp-validation-for="BangThongBoNho" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TocDoNhan" class="control-label"></label>
+                    <input asp-for="TocDoNhan" class="form-control" />
+                    <span asp-validation-for="TocDoNhan" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SoLoi" class="control-label"></label>
+                    <input asp-for="SoLoi" class="form-control" />
+                    <span asp-validation-for="SoLoi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DirectX" class="control-label"></label>
+                    <input asp-for="DirectX" class="form-control" />
+                    <span asp-validation-for="DirectX" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OpenGl" class="control-label"></label>
+                    <input asp-for="OpenGl" class="form-control" />
+                    <span asp-validation-for="OpenGl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Vulkan" class="control-label"></label>
+                    <input asp-for="Vulkan" class="form-control" />
+                    <span asp-validation-for="Vulkan" class="text-danger"></span>
+                </div>
+
+                    
+
+                <div class="container mt-3">
+                     <input type="submit" value="Lưu" class="btn btn-primary" />
+                    <a class="btn btn-secondary" asp-action="Index">Trờ về</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

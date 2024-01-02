@@ -20,9 +20,6 @@ namespace High_TMDT.Data
         public int? Mau { get; set; }
         public string? IdRam { get; set; }
         public int? IdKichThuocManHinh { get; set; }
-        public string? Wireless { get; set; }
-        public string? Lan { get; set; }
-        public string? Bluetooth { get; set; }
         public string? KieuBanPhim { get; set; }
         public string? Chuot { get; set; }
         public string? Camera { get; set; }

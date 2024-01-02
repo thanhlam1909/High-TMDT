@@ -29,6 +29,7 @@ namespace High_TMDT.Data
         public int? MaDongSanPham { get; set; }
         public DateTime? NgayThemSanPham { get; set; }
         public string? TrangThaiSp { get; set; }
+        public int? Soluong { get; set; }
 
         public virtual HangSanXuatLoaiSanPham? IdHangLoaiSanPhamNavigation { get; set; }
         public virtual DongSanPham? MaDongSanPhamNavigation { get; set; }

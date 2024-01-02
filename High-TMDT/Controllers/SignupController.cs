@@ -17,19 +17,19 @@ namespace High_TMDT.Controllers
         {
             _context = dbContext;
         }
-
+        [HttpGet("/dang-ki")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
+       
         public IActionResult SignUp()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("/dang-ki")]
         public IActionResult SignUp(SignUp model, IFormFile FileName)
         {
             try

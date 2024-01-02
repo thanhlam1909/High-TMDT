@@ -13,6 +13,7 @@ namespace High_TMDT.Data
         public int? ThuTuAnh { get; set; }
         public string? LinkVideo { get; set; }
         public int? ThuTuVideo { get; set; }
+        public string? Noidung { get; set; }
 
         public virtual SanPhamLaptop? IdSpNavigation { get; set; }
     }

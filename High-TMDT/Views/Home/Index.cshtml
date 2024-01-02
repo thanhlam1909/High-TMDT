@@ -12,7 +12,39 @@
     <link href="~/css/login.css" rel="stylesheet">
 
     <link href="~/css/email.css" rel="stylesheet" type="text/css">
+    <style>
+        .category-index {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
+        .category-index-name {
+            background-color: #fff;
+            color: black;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .category-index-name:hover {
+                background-color: gray ;
+            }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%; /* Ensure the container takes up the full height */
+        }
+
+        .max-size-image {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
 </head>
 <body>
     <!-- Hero Section Begin -->
@@ -25,7 +57,11 @@
                             <i class="fa fa-bars"></i>
                             <span>Danh Mục</span>
                         </div>
-                        <ul>
+                        <ul class="category-index">
+                            @foreach (var category in Model.LoaiSanPhamList)
+                            {
+                                <li class="category-index-name">@category.TenLoaiSp</li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -69,31 +105,16 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
+                    @foreach (var brand in Model.HangSanPhamList)
+                    {
+                        <div class="categories__item set-bg">
+                            <div class="image-container">
+                                <img src="img/categories/@brand.AnhHang" alt="Brand Image" class="max-size-image">
+                            </div>
+                            <h5><a href="#">@brand.TenHangSp</a></h5>
                         </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
+                    }
+                    
                 </div>
             </div>
         </div>

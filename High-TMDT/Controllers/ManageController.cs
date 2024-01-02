@@ -17,7 +17,7 @@ namespace High_TMDT.Controllers
         {
             _context = dbContext;
         }
-
+        [HttpGet("/trang-quan-li")]
         public IActionResult Index()
         {
             var signUpModel = new SignUp
@@ -43,6 +43,9 @@ namespace High_TMDT.Controllers
             // Ngược lại, nếu có quyền, trả về trang quản lý
             return View(signUpModel);
         }
-
+        public IActionResult Create_ProDuct()
+        {
+            return View();
+        }
     }
 }
