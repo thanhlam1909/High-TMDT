@@ -1,0 +1,85 @@
+﻿@model High_TMDT.Data.CardDoHoaTichHop
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_Manage.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CardDoHoaTichHop</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenCard)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenCard)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NhaSx)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NhaSx)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KienTruc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KienTruc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Vram)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Vram)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GiaoTiep)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GiaoTiep)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BangThon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BangThon)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TocDoNhan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TocDoNhan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SoLoiCuda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SoLoiCuda)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DirectX)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DirectX)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OpenGl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OpenGl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Vulkan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Vulkan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdCardTichHop">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

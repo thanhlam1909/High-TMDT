@@ -179,56 +179,61 @@
                                 <input type="search" class="form-control" placeholder="Tìm kiếm&hellip;">
                             </div>
                         </div>
-                        <button class="btn btn-primary ml-1" style="border-radius: 50px;">Thêm màn hình mới</button><!-- Nút thêm Người dùng tròn -->
+                        <a href="@Url.Action("Create", "Manhinh")" class="btn btn-primary ml-1" style="border-radius: 50px;">Thêm </a>
 
                     </div>
                 </div>
-                @* <table class="table table-striped table-hover table-bordered">
-                <thead>
-                <tr>
-                <th class="align-middle text-center">Mã Người Dùng</th>
-                <th class="align-middle text-center">Tên Người Dùng</th>
-                <th class="align-middle text-center">Giới tính</th>
-                <th class="align-middle text-center">Địa Chỉ</th>
-                <th class="align-middle text-center">Phường/Xã</th>
-                <th class="align-middle text-center">Quận/Huyện</th>
-                <th class="align-middle text-center">Thành Phố</th>
-                <th class="align-middle text-center">Quốc Gia</th>
-                <th class="align-middle text-center">Thao Tác</th>
-                </tr>
-                </thead>
+                <table class="table table-striped table-hover table-bordered">
 
-                <tbody>
-                @foreach (var userAndAddress in Model.UserAndAddressList)
-                {
-                <tr>
-                <td class="align-middle text-center">@userAndAddress.User.Id</td>
-                <td class="align-middle text-center">@userAndAddress.User.TenNguoiDung</td>
-                <td class="align-middle text-center">@userAndAddress.User.GioiTinh</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.DiaChiNha</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.PhuongXa</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.QuanHuyen</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.ThanhPhoTinh</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.QuocGia</td>
-                <td class="align-middle text-center">
-                <a href="#" class="view" title="Chi Tiết" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                <a href="#" class="edit" title="Chỉnh Sửa" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a href="#" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                </td>
-                </tr>
-                }
-                </tbody>
-                </table> *@
+                    <thead>
+                        <tr>
+                            <th class="align-middle text-center">Mã màn hình</th>
+                            <th class="align-middle text-center">Kích thước</th>
+                            <th class="align-middle text-center">Độ phân giải</th>
+                            <th class="align-middle text-center">Công nghệ </th>
+                            <th class="align-middle text-center">Tần số</th>
+                            <th class="align-middle text-center">Độ sáng</th>
+                            <th class="align-middle text-center">Loại màn hình</th>
+                            <th class="align-middle text-center">Tỷ lệ khung hình</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var manhinh in Model.ManHinhLaptopList)
+                        {
+                            <tr>
+                                <td class="align-middle text-center">@manhinh.Id</td>
+                                <td class="align-middle text-center">@manhinh.KichThuoc</td>
+                                <td class="align-middle text-center">@manhinh.DoPhanGiai</td>
+                                <td class="align-middle text-center">@manhinh.CongNgheManHinh</td>
+                                <td class="align-middle text-center">@manhinh.TanSo</td>
+                                <td class="align-middle text-center">@manhinh.DoSang</td>
+                                <td class="align-middle text-center">@manhinh.LoaiManHinh</td>
+                                <td class="align-middle text-center">@manhinh.TyLeKhungHinh</td>
+                                <td class="align-middle text-center">
+                                    <a asp-action="Details" asp-controller="Manhinh" asp-route-id="@manhinh.Id" class="view" title="Chi Tiết" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE417;</i>
+                                    </a>
+                                    <a asp-action="Edit" asp-controller="Manhinh" asp-route-id="@manhinh.Id" class="edit" title="Chỉnh Sửa" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE254;</i>
+                                    </a>
+                                    <a asp-action="Delete" asp-controller="Manhinh" asp-route-id="@manhinh.Id" class="delete" title="Xóa" data-toggle="tooltip">
+                                        <i class="material-icons">&#xE872;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
                 <div class="clearfix">
-                    <div class="hint-text">Hiển thị <b>5</b> trên tổng số <b>25</b> bản ghi</div>
                     <ul class="pagination">
-                        <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                        @for (int i = 1; i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                <a href="@Url.Action("Index", new { page = i })" class="page-link">@i</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

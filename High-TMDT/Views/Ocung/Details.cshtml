@@ -1,0 +1,56 @@
+﻿@model High_TMDT.Data.OcungLaptop
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_Manage.cshtml";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>OcungLaptop</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenOocung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenOocung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DungLuongOocung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DungLuongOocung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TocDoDocOocung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TocDoDocOocung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TocDoGhiOocung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TocDoGhiOocung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LoaiOocung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LoaiOocung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GiaoTiepOocung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GiaoTiepOocung)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdOocung">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

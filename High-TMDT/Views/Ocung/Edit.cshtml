@@ -1,0 +1,58 @@
+﻿@model High_TMDT.Data.OcungLaptop
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout_Manage.cshtml";
+
+}
+
+<h1>Edit</h1>
+
+<h4>OcungLaptop</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdOocung" />
+            <div class="form-group">
+                <label asp-for="TenOocung" class="control-label"></label>
+                <input asp-for="TenOocung" class="form-control" />
+                <span asp-validation-for="TenOocung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DungLuongOocung" class="control-label"></label>
+                <input asp-for="DungLuongOocung" class="form-control" />
+                <span asp-validation-for="DungLuongOocung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TocDoDocOocung" class="control-label"></label>
+                <input asp-for="TocDoDocOocung" class="form-control" />
+                <span asp-validation-for="TocDoDocOocung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TocDoGhiOocung" class="control-label"></label>
+                <input asp-for="TocDoGhiOocung" class="form-control" />
+                <span asp-validation-for="TocDoGhiOocung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoaiOocung" class="control-label"></label>
+                <input asp-for="LoaiOocung" class="form-control" />
+                <span asp-validation-for="LoaiOocung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GiaoTiepOocung" class="control-label"></label>
+                <input asp-for="GiaoTiepOocung" class="form-control" />
+                <span asp-validation-for="GiaoTiepOocung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

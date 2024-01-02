@@ -37,6 +37,30 @@ namespace High_TMDT.Controllers
             return View(cardRoiModel);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(CardRoi cardRoi)
+        {
+            if (ModelState.IsValid)
+            {
+                // Add the new cardRoi to the context
+                _context.CardRois.Add(cardRoi);
+                // Save changes to the database
+                _context.SaveChanges();
+
+                // Redirect to the Index action after successful creation
+                return RedirectToAction("Index");
+            }
+
+            // If the model state is not valid, return to the Create view with the entered data
+            return View(cardRoi);
+        }
+
 
         public IActionResult Details(int id)
         {

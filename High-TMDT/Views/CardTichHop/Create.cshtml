@@ -1,0 +1,82 @@
+﻿@model High_TMDT.Data.CardDoHoaTichHop
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_Manage.cshtml";
+
+}
+
+<h1>Create</h1>
+
+<h4>CardDoHoaTichHop</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TenCard" class="control-label"></label>
+                <input asp-for="TenCard" class="form-control" />
+                <span asp-validation-for="TenCard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NhaSx" class="control-label"></label>
+                <input asp-for="NhaSx" class="form-control" />
+                <span asp-validation-for="NhaSx" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KienTruc" class="control-label"></label>
+                <input asp-for="KienTruc" class="form-control" />
+                <span asp-validation-for="KienTruc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vram" class="control-label"></label>
+                <input asp-for="Vram" class="form-control" />
+                <span asp-validation-for="Vram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GiaoTiep" class="control-label"></label>
+                <input asp-for="GiaoTiep" class="form-control" />
+                <span asp-validation-for="GiaoTiep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BangThon" class="control-label"></label>
+                <input asp-for="BangThon" class="form-control" />
+                <span asp-validation-for="BangThon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TocDoNhan" class="control-label"></label>
+                <input asp-for="TocDoNhan" class="form-control" />
+                <span asp-validation-for="TocDoNhan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoLoiCuda" class="control-label"></label>
+                <input asp-for="SoLoiCuda" class="form-control" />
+                <span asp-validation-for="SoLoiCuda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirectX" class="control-label"></label>
+                <input asp-for="DirectX" class="form-control" />
+                <span asp-validation-for="DirectX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpenGl" class="control-label"></label>
+                <input asp-for="OpenGl" class="form-control" />
+                <span asp-validation-for="OpenGl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vulkan" class="control-label"></label>
+                <input asp-for="Vulkan" class="form-control" />
+                <span asp-validation-for="Vulkan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

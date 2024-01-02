@@ -1,0 +1,46 @@
+﻿@model High_TMDT.Data.Wireless
+
+@{
+    ViewData["Title"] = "Create"; Layout = "~/Views/Shared/_Layout_Manage.cshtml";
+
+}
+
+<h1>Create</h1>
+
+<h4>Wireless</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdWireless" class="control-label"></label>
+                <input asp-for="IdWireless" class="form-control" />
+                <span asp-validation-for="IdWireless" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenWireless" class="control-label"></label>
+                <input asp-for="TenWireless" class="form-control" />
+                <span asp-validation-for="TenWireless" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TocDoKetNoi" class="control-label"></label>
+                <input asp-for="TocDoKetNoi" class="form-control" />
+                <span asp-validation-for="TocDoKetNoi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BangTanHoTro" class="control-label"></label>
+                <input asp-for="BangTanHoTro" class="form-control" />
+                <span asp-validation-for="BangTanHoTro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

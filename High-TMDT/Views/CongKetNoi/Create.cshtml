@@ -1,0 +1,51 @@
+﻿@model High_TMDT.Data.CongKetNoi
+
+@{
+    ViewData["Title"] = "Create"; Layout = "~/Views/Shared/_Layout_Manage.cshtml";
+
+}
+
+<h1>Create</h1>
+
+<h4>CongKetNoi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdCongKetNoi" class="control-label"></label>
+                <input asp-for="IdCongKetNoi" class="form-control" />
+                <span asp-validation-for="IdCongKetNoi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenCong" class="control-label"></label>
+                <input asp-for="TenCong" class="form-control" />
+                <span asp-validation-for="TenCong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoaiCong" class="control-label"></label>
+                <input asp-for="LoaiCong" class="form-control" />
+                <span asp-validation-for="LoaiCong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TocDoTruyenDuLieu" class="control-label"></label>
+                <input asp-for="TocDoTruyenDuLieu" class="form-control" />
+                <span asp-validation-for="TocDoTruyenDuLieu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChucNang" class="control-label"></label>
+                <input asp-for="ChucNang" class="form-control" />
+                <span asp-validation-for="ChucNang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

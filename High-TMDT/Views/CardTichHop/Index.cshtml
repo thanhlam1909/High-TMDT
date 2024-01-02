@@ -179,56 +179,68 @@
                                 <input type="search" class="form-control" placeholder="Tìm kiếm&hellip;">
                             </div>
                         </div>
-                        <button class="btn btn-primary ml-1" style="border-radius: 50px;">Thêm </button><!-- Nút thêm Người dùng tròn -->
+                        <a href="@Url.Action("Create", "CardTichHop")" class="btn btn-primary ml-1" style="border-radius: 50px;">Thêm </a>
 
                     </div>
                 </div>
-                @* <table class="table table-striped table-hover table-bordered">
+                <table class="table table-striped table-hover table-bordered">
+
                 <thead>
-                <tr>
-                <th class="align-middle text-center">Mã Người Dùng</th>
-                <th class="align-middle text-center">Tên Người Dùng</th>
-                <th class="align-middle text-center">Giới tính</th>
-                <th class="align-middle text-center">Địa Chỉ</th>
-                <th class="align-middle text-center">Phường/Xã</th>
-                <th class="align-middle text-center">Quận/Huyện</th>
-                <th class="align-middle text-center">Thành Phố</th>
-                <th class="align-middle text-center">Quốc Gia</th>
-                <th class="align-middle text-center">Thao Tác</th>
-                </tr>
+                    <tr>
+                        <th class="align-middle text-center">Mã Card</th>
+                        <th class="align-middle text-center">Tên card</th>
+                        <th class="align-middle text-center">Nhà sản xuất</th>
+                        <th class="align-middle text-center">Bộ nhớ VRAM</th>
+                        <th class="align-middle text-center">Giao Thức</th>
+                        <th class="align-middle text-center">Băng thông bộ nhó</th>
+                        <th class="align-middle text-center">Tốc độ nhân</th>
+                        <th class="align-middle text-center">Số lõi</th>
+                        <th class="align-middle text-center">DirectX</th>
+                        <th class="align-middle text-center">OpenGl</th>
+                        <th class="align-middle text-center">Vulkan</th>
+                        <th class="align-middle text-center">Actions</th>
+                    </tr>
                 </thead>
 
                 <tbody>
-                @foreach (var userAndAddress in Model.UserAndAddressList)
-                {
-                <tr>
-                <td class="align-middle text-center">@userAndAddress.User.Id</td>
-                <td class="align-middle text-center">@userAndAddress.User.TenNguoiDung</td>
-                <td class="align-middle text-center">@userAndAddress.User.GioiTinh</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.DiaChiNha</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.PhuongXa</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.QuanHuyen</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.ThanhPhoTinh</td>
-                <td class="align-middle text-center">@userAndAddress.UserAddress.QuocGia</td>
-                <td class="align-middle text-center">
-                <a href="#" class="view" title="Chi Tiết" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                <a href="#" class="edit" title="Chỉnh Sửa" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a href="#" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                </td>
-                </tr>
-                }
+                        @foreach (var cardRoi in Model.CardDoHoaTichHopList)
+                    {
+                        <tr>
+                             <td class="align-middle text-center">@cardRoi.IdCardTichHop</td>
+                            <td class="align-middle text-center">@cardRoi.TenCard</td>
+                            <td class="align-middle text-center">@cardRoi.NhaSx</td>
+                            <td class="align-middle text-center">@cardRoi.Vram</td>
+                                <td class="align-middle text-center">@cardRoi.GiaoTiep</td>
+                            <td class="align-middle text-center">@cardRoi.BangThon</td>
+                            <td class="align-middle text-center">@cardRoi.TocDoNhan</td>
+                                <td class="align-middle text-center">@cardRoi.SoLoiCuda</td>
+                            <td class="align-middle text-center">@cardRoi.DirectX</td>
+                            <td class="align-middle text-center">@cardRoi.OpenGl</td>
+                            <td class="align-middle text-center">@cardRoi.Vulkan</td>
+                            <td class="align-middle text-center">
+                                    <a asp-action="Details" asp-controller="CardTichHop" asp-route-id="@cardRoi.IdCardTichHop" class="view" title="Chi Tiết" data-toggle="tooltip">
+                                    <i class="material-icons">&#xE417;</i>
+                                </a>
+                                    <a asp-action="Edit" asp-controller="CardTichHop" asp-route-id="@cardRoi.IdCardTichHop" class="edit" title="Chỉnh Sửa" data-toggle="tooltip">
+                                    <i class="material-icons">&#xE254;</i>
+                                </a>
+                                    <a asp-action="Delete" asp-controller="CardTichHop" asp-route-id="@cardRoi.IdCardTichHop" class="delete" title="Xóa" data-toggle="tooltip">
+                                    <i class="material-icons">&#xE872;</i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
-                </table> *@
+                </table>
+
                 <div class="clearfix">
-                    <div class="hint-text">Hiển thị <b>5</b> trên tổng số <b>25</b> bản ghi</div>
                     <ul class="pagination">
-                        <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                        @for (int i = 1; i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                                <a href="@Url.Action("Index", new { page = i })" class="page-link">@i</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
